@@ -35,6 +35,10 @@ export default class CardValidator {
         return RouterRequest.checkSchema(schema, true);
     }
 
+    public static get() {
+        return RouterRequest.checkSchema({}, true);
+    }
+
     public static put() {
         const schema: Record<string, ParamSchema> = {
             id: {

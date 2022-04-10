@@ -1,22 +1,26 @@
-import { isAuthenticated } from '../../../middlewares/isAuthenticated';
 import AuthValidator from './validators/AuthValidator';
 import CardValidator from './validators/CardValidator';
+import UserValidator from './validators/UserValidator';
 
 export const routes = {    
-    // Rota de Autenticação
+    // Rotas de Autenticação
     'POST /login': {
         path: 'AuthController.getAccessToken',
         middlewares: AuthValidator.getAccessToken()
     },
+    'POST /registrar': {
+        path: 'UserController.add',
+        middlewares: UserValidator.add()
+    },
 
-    // Rota de Card
+    // Rotas de Card
     'POST /cards': {
         path: 'CardController.addCard',
         middlewares: CardValidator.addCard()
     },
     'GET /cards': {
         path: 'CardController.getCards',
-        middlewares: [isAuthenticated]
+        middlewares: CardValidator.get()
     },
     'PUT /cards/:id': {
         path: 'CardController.updateCard',

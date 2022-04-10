@@ -25,6 +25,10 @@ export class BaseRepository {
     async findAll() {
         return await this.entity.findAll();
     }
+    
+    async find(options) {
+        return await this.entity.findAll({ where: options });
+    }
 
     async findById(id: string) {
         return await this.entity.findByPk(id);
