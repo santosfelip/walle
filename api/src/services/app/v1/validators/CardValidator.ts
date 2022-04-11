@@ -27,7 +27,7 @@ export default class CardValidator {
                     negated: true
                 },
                 isIn: {
-                    options: [['novo','todo', 'doing', 'done']]
+                    options: [['ToDo', 'Doing', 'Done']]
                 }
             },
         }
