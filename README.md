@@ -44,6 +44,14 @@ Navegue para a pasta `api`:
 ```bash
 cd api
 ```
+Crie um arquivo .env com os seguintes atributos:
+
+```
+PORT=5000
+ACCESS_TOKEN_SECRET = 'sua-secret'
+EXPIRE_TOKEN = '1h'
+```
+
 Em seguida, faça o download das dependências:
 ```bash
 npm i
